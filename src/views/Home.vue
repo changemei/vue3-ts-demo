@@ -2,6 +2,8 @@
   <div class="home">
     <top-nav></top-nav>
     <div class="home-content">
+      
+        <el-aside width="200px">Aside</el-aside>
       <router-view></router-view>
     </div>
     <footer-nav></footer-nav>
