@@ -31,7 +31,7 @@ export  default defineComponent({
   setup(){
     const top_data = reactive(new TopData())
     const handleRouter= ()=>{
-      router.push('/login')
+      router.push('Login')
     }
 return {
       ...toRefs(top_data),

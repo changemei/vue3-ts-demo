@@ -2,24 +2,24 @@
   <div class="login">
     <div class="form-cls">
         <el-form
-            ref="ruleFormRef"
-            :model="ruleForm"
+            ref="loginFormRef"
+            :model="loginForm"
             status-icon
             :rules="rules"
             label-width="70px"
         >
           <h2>后台管理系统</h2>
           <el-form-item label="用户名:" prop="username">
-            <el-input v-model="ruleForm.username" type="text" autocomplete="off" />
+            <el-input v-model="loginForm.username" type="text" autocomplete="off" />
           </el-form-item>
 
           <el-form-item label="密码:" prop="password">
-            <el-input v-model="ruleForm.password" type="password" autocomplete="off"/>
+            <el-input v-model="loginForm.password" type="password" autocomplete="off"/>
           </el-form-item>
 
           <el-form-item>
-            <el-button class="login-btn" type="primary" @click="submitForm(ruleFormRef)">登录</el-button>
-            <el-button class="login-btn" @click="resetForm(ruleFormRef)">重置</el-button>
+            <el-button class="login-btn" type="primary" @click="submitForm(loginFormRef)">登录</el-button>
+            <el-button class="login-btn" @click="resetForm(loginFormRef)">重置</el-button>
           </el-form-item>
 
         </el-form>
@@ -73,12 +73,12 @@ export default defineComponent({
     }
 
     // 登录
-    const ruleFormRef = ref<FormInstance>()
+    const loginFormRef = ref<FormInstance>()
 
     // 重置
     const resetForm = () => {
-      data.ruleForm.username = ""
-      data.ruleForm.password = ""
+      data.loginForm.username = ""
+      data.loginForm.password = ""
     }
 
     const submitForm = (formEl: FormInstance | undefined) => {
@@ -86,7 +86,8 @@ export default defineComponent({
       if (!formEl) return
       formEl.validate((valid) => {
         if (valid) {
-          login(data.ruleForm).then((res) => {
+          login(data.loginForm).then((res) => {
+            
             console.log(res)
             // 将token进行保存
             localStorage.setItem("token", res.data.token)
@@ -105,7 +106,7 @@ export default defineComponent({
       rules,
       resetForm,
       submitForm,
-      ruleFormRef
+      loginFormRef
     }
   }
  })
