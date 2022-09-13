@@ -1,15 +1,14 @@
 <template>
-   <div >1231321</div>
+  <div>1231321</div>
 </template>
 <script  lang="ts">
-import {defineComponent, reactive,toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from "vue";
 export default defineComponent({
-     setup () { 
-      
-         return{} 
-             }
+  setup() {
+  
+    return {};
+  },
 });
 </script>
 <style lang="scss" scoped>
-
 </style>
